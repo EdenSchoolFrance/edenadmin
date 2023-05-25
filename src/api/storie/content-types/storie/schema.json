@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "storie",
+    "pluralName": "stories",
+    "displayName": "Storie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
