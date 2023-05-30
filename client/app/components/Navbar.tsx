@@ -1,4 +1,4 @@
-import { Box, Flex, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Box, List, ListItem, Text } from "@chakra-ui/react";
 import { Link } from "@remix-run/react";
 
 export default function Navbar() {
