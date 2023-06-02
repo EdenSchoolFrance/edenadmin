@@ -66,7 +66,7 @@ const Index = () => {
   return (
     <>
       <Navbar />
-      <Center>
+      <Center py={10}>
         <Wrap spacing={"2.5rem"} justify={"center"}>
           {render}
         </Wrap>
