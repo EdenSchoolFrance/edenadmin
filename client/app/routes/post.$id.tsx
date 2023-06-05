@@ -16,7 +16,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 }
 
 export const DetailPost = () => {
-    const { id, rep } = useLoaderData<typeof loader>();
+    const {  rep } = useLoaderData<typeof loader>();
     console.log(rep);
     
     return (
@@ -24,7 +24,7 @@ export const DetailPost = () => {
             <Navbar/>
             <Center>
                <Card w={"80%"} display={"flex"} flexDirection={"row"} mt="3rem" bg="#EDF2F7">
-                 <Box h="100%" w="30%"><Img w={"100%"} h={"lg"} borderRadius="md" src={`${rep.meta.strapi_url}${rep.data.attributes.img.data.attributes.url}`}></Img></Box>
+                 <Box h="100%" w="30%"><Img w={"100%"} objectFit={"cover"} h={"lg"} borderRadius="md" src={`${rep.meta.strapi_url}${rep.data.attributes.img.data.attributes.url}`}></Img></Box>
                  <Box w="70%">                    
                     <Heading as="h1" p="1rem">{rep.data.attributes.title}</Heading>
                     <Flex justify={"center"}>
