@@ -19,8 +19,7 @@
     },
     "content": {
       "type": "richtext",
-      "required": true,
-      "maxLength": 260
+      "required": true
     },
     "img": {
       "type": "media",
