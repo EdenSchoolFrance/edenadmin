@@ -26,7 +26,7 @@ interface IMarkdownRender {
   [key: string]: any;
 }
 
-const TableRender = ({
+export const TableRender = ({
   children,
 }: {
   children: React.ReactNode | React.JSX.Element;
