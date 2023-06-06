@@ -1,8 +1,9 @@
 import type { CardProps } from "@chakra-ui/react";
-import { Box, Card, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, Image, Link as ChakraLink, Text } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { MarkDownRender } from "./MarkDownRender";
 import type { MarkdownToJSX } from "markdown-to-jsx";
+import { Link } from "@remix-run/react";
 
 interface IStorieCard extends CardProps {
   storieId: number;
@@ -49,9 +50,11 @@ export const StorieCard = ({
               {storieDescription.slice(0, 200)}
             </MarkDownRender>
           </Box>
-          <Link href={`/post/${storieId}`} isExternal color="#319795" ml={"1"}>
-            Lire la suite
-            <ExternalLinkIcon mx="2px" mb="5px" />
+          <Link to={`/post/${storieId}`}>
+            <Text as={"p"} color="#319795" ml={"1"}>
+              Lire la suite
+              <ExternalLinkIcon mx="2px" mb="5px" />
+            </Text>
           </Link>
         </Box>
       </Flex>
