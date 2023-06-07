@@ -11,16 +11,18 @@ export default function Navbar() {
         py={5}
         alignItems={"center"}
       >
-        <Text fontSize={"2xl"} as={"h1"} color={"teal.400"} fontWeight={"bold"}>
+        <Text fontSize={"2xl"} as={"h1"} color={"teal.400"} fontWeight={"bold"} pr="10rem" >
           Eden Admin
         </Text>
-        <List spacing={3} as="nav">
-          <ListItem fontSize={"xl"} as={"li"}  display={'flex'} flexDirection={"row"} >
+        <List gap={"6rem"} display={"flex"}>
+          <ListItem fontSize={"xl"} as={"li"}>
             <Link to={"/"}>
-                 <Text color={"white"} pr="2rem">Home</Text>
+                 <Text color={"white"}>Home</Text>
             </Link>
+          </ListItem>
+          <ListItem fontSize={"xl"} as={"li"}>
             <Link to={"/stories"}>
-              <Text color={"white"} pr="2rem">Stories</Text>
+              <Text color={"white"}>Stories</Text>
             </Link>
           </ListItem>
         </List>
