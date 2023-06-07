@@ -1,6 +1,7 @@
-import { ChakraProvider, Box, Heading } from "@chakra-ui/react";
+import { ChakraProvider, Box, Heading, Center, Button } from "@chakra-ui/react";
 import type { MetaFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -40,8 +41,6 @@ function Document({
 }
 
 export default function App() {
-  // throw new Error("💣💥 Booooom");
-
   return (
     <Document>
       <ChakraProvider>
@@ -51,32 +50,56 @@ export default function App() {
   );
 }
 
-// How ChakraProvider should be used on CatchBoundary
 export function CatchBoundary() {
   const caught = useCatch();
+  let reason = "";
+  console.error(caught);
+
+  switch (caught.status) {
+    case 401:
+      reason = "Vous n'êtes pas autoriser à accedez à cette page !";
+      break;
+
+    case 404:
+      reason = "Page non trouvé";
+      break;
+
+    default:
+      reason =
+        process.env.NODE_ENV === "development" ? caught.data : "Erreur interne";
+      break;
+  }
 
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
       <ChakraProvider>
-        <Box>
-          <Heading as="h1" bg="purple.600">
-            [CatchBoundary]: {caught.status} {caught.statusText}
-          </Heading>
+        <Box h={"100vh"} w={"100vw"}>
+          <Center h={"100%"} w={"100%"} flexDirection={"column"} gap={"1rem"}>
+            <Heading as={"h1"}>Oh ! Une erreur est survenue !</Heading>
+            <Heading as={"h2"} color={"red.400"} textAlign={"center"}>
+              {reason}
+            </Heading>
+            <Link to={"/"}>
+              <Button>Revenir à l'accueil</Button>
+            </Link>
+          </Center>
         </Box>
       </ChakraProvider>
     </Document>
   );
 }
 
-// How ChakraProvider should be used on ErrorBoundary
 export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document title="Error!">
       <ChakraProvider>
-        <Box>
-          <Heading as="h1" bg="blue.500">
-            [ErrorBoundary]: There was an error: {error.message}
-          </Heading>
+        <Box h={"100vh"} w={"100vw"}>
+          <Center h={"100%"} w={"100%"} flexDirection={"column"} gap={"1rem"}>
+            <Heading as={"h1"}>Oh ! Une erreur est survenue !</Heading>
+            <Link to={"/"}>
+              <Button>Revenir à l'accueil</Button>
+            </Link>
+          </Center>
         </Box>
       </ChakraProvider>
     </Document>
