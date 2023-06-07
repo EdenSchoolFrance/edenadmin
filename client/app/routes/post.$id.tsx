@@ -82,16 +82,12 @@ export const DetailPost = () => {
               src={`${rep.meta.strapi_url}${rep.data.attributes.img.data.attributes.url}`}
             ></Img>
           </Box>
-          <Box w="70%">
-            <Heading as="h1" p="1rem">
+          <Box w="70%" p={"1rem"}>
+            <Heading as="h1" pb={"1rem"}>
               {rep.data.attributes.title}
             </Heading>
-            <Flex justify={"center"}>
-              <Divider w={"80%"} />
-            </Flex>
-            <MarkDownRender p="1rem">
-              {rep.data.attributes.content}
-            </MarkDownRender>
+            <Divider w={"90%"} h={"2px"} bg={"black"} mb={"1rem"} />
+            <MarkDownRender>{rep.data.attributes.content}</MarkDownRender>
           </Box>
         </Card>
       </Center>
