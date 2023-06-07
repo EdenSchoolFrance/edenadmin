@@ -15,9 +15,12 @@ export default function Navbar() {
           Eden Admin
         </Text>
         <List spacing={3} as="nav">
-          <ListItem fontSize={"xl"} as={"li"} marginLeft={80} >
-            <Link to={"/stories"} >
-              <Text color={"white"}>Stories</Text>
+          <ListItem fontSize={"xl"} as={"li"}  display={'flex'} flexDirection={"row"} >
+            <Link to={"/"}>
+                 <Text color={"white"} pr="2rem">Home</Text>
+            </Link>
+            <Link to={"/stories"}>
+              <Text color={"white"} pr="2rem">Stories</Text>
             </Link>
           </ListItem>
         </List>
