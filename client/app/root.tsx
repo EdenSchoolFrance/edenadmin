@@ -10,7 +10,6 @@ import {
   ScrollRestoration,
   useCatch,
 } from "@remix-run/react";
-import { useState } from "react";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",

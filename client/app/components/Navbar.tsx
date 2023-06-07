@@ -9,14 +9,18 @@ export default function Navbar() {
         bg={"gray.700"}
         px={9}
         py={5}
-        as="nav"
         alignItems={"center"}
       >
-        <Text fontSize={"2xl"} as={"h1"} color={"teal.400"} fontWeight={"bold"}>
+        <Text fontSize={"2xl"} as={"h1"} color={"teal.400"} fontWeight={"bold"} pr="10rem" >
           Eden Admin
         </Text>
-        <List spacing={3}>
-          <ListItem fontSize={"xl"} as={"li"} marginLeft={80}>
+        <List gap={"6rem"} display={"flex"}>
+          <ListItem fontSize={"xl"} as={"li"}>
+            <Link to={"/"}>
+                 <Text color={"white"}>Home</Text>
+            </Link>
+          </ListItem>
+          <ListItem fontSize={"xl"} as={"li"}>
             <Link to={"/stories"}>
               <Text color={"white"}>Stories</Text>
             </Link>
