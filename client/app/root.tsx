@@ -1,7 +1,6 @@
-import { ChakraProvider, Box, Heading, Center, Button } from "@chakra-ui/react";
+import { ChakraProvider, Box, Heading, Center, Button, Link } from "@chakra-ui/react";
 import type { MetaFunction } from "@remix-run/node";
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -79,7 +78,7 @@ export function CatchBoundary() {
             <Heading as={"h2"} color={"red.400"} textAlign={"center"}>
               {reason}
             </Heading>
-            <Link to={"/"}>
+            <Link href={"/"}>
               <Button>Revenir à l'accueil</Button>
             </Link>
           </Center>
@@ -96,7 +95,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
         <Box h={"100vh"} w={"100vw"}>
           <Center h={"100%"} w={"100%"} flexDirection={"column"} gap={"1rem"}>
             <Heading as={"h1"}>Oh ! Une erreur est survenue !</Heading>
-            <Link to={"/"}>
+            <Link href={"/"}>
               <Button>Revenir à l'accueil</Button>
             </Link>
           </Center>

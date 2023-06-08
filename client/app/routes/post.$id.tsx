@@ -5,12 +5,12 @@ import {
   Img,
   Box,
   Divider,
-  Flex,
+  Link,
   Button,
 } from "@chakra-ui/react";
 import type { ErrorBoundaryComponent, LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { MarkDownRender } from "~/components/MarkDownRender";
 import Navbar from "~/components/Navbar";
 
@@ -22,7 +22,7 @@ export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
         <Heading as={"h2"} color={"red"}>
           {error.message}
         </Heading>
-        <Link to={"/"}>
+        <Link href={"/"}>
           <Button>Revenir à l'accueil</Button>
         </Link>
       </Center>
