@@ -62,7 +62,7 @@ export async function loader() {
   header.append("Authorization", `Bearer ${process.env.STRAPI_TOKEN}`);
 
   const res = await fetch(
-    `${process.env.STRAPI_URL}/api/stories?populate=img`,
+    `${process.env.STRAPI_URL}/api/stories?populate=img&sort=id:desc&pagination[page]=1&pagination[pageSize]=4`,
     {
       headers: header,
     }
