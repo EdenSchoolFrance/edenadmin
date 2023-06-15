@@ -17,9 +17,10 @@ import {
     Img,
     Button,
     Box,
+    Link,
   } from "@chakra-ui/react";
   import type { ErrorBoundaryComponent } from "@remix-run/node";
-  import { Link, useLoaderData } from "@remix-run/react";
+  import { useLoaderData } from "@remix-run/react";
   import type { MarkdownToJSX } from "markdown-to-jsx";
   import { TableRender } from "~/components/MarkDownRender";
   import Navbar from "~/components/Navbar";
@@ -48,7 +49,7 @@ import {
           <Heading as={"h2"} color={"red.400"} textAlign={"center"}>
             {error.message}
           </Heading>
-          <Link to={"/"}>
+          <Link href={"/"}>
             <Button>Revenir à l'accueil</Button>
           </Link>
         </Center>

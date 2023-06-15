@@ -1,5 +1,4 @@
-import { Box, List, ListItem, Text } from "@chakra-ui/react";
-import { Link } from "@remix-run/react";
+import { Box, List, ListItem, Text, Link } from "@chakra-ui/react";
 
 export default function Navbar() {
   return (
@@ -16,13 +15,18 @@ export default function Navbar() {
         </Text>
         <List gap={"6rem"} display={"flex"}>
           <ListItem fontSize={"xl"} as={"li"}>
-            <Link to={"/"}>
+            <Link href={"/"}>
                  <Text color={"white"}>Home</Text>
             </Link>
           </ListItem>
           <ListItem fontSize={"xl"} as={"li"}>
-            <Link to={"/stories"}>
+            <Link href={"/stories"}>
               <Text color={"white"}>Stories</Text>
+            </Link>
+          </ListItem>
+          <ListItem fontSize={"xl"} as={"li"}>
+            <Link href={"/test-bug-css"} >
+              <Text color={"white"}>test-bug-css</Text>
             </Link>
           </ListItem>
         </List>
